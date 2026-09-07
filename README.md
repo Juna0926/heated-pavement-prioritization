@@ -22,23 +22,21 @@ Heated pavement can reduce winter hazards such as snow / ice-related road risk, 
 
 ## Model result
 
-![Random Forest AUC](assets/figure-01-random-forest-auc.png)
+![Random Forest AUC](assets/figure-01-random-forest-auc.svg)
 
 The competition report presents a **Random Forest AUC of 0.888**.
 
 ## Candidate prioritization
 
-![Top five candidate roads](assets/figure-02-top-five-roads.png)
+![Top five candidate roads](assets/figure-02-top-five-roads.svg)
 
 The final analysis ranked five roads by Random Forest installation probability and then reviewed each candidate using street / road context.
 
-## Expected impact
+## Expected impact & limitations
 
-![Expected impact](assets/figure-03-expected-impact.png)
+![Expected impact](assets/figure-03-expected-impact.svg)
 
 The project positioned the model as a transparent screening tool that could support more efficient deployment and later extension to related winter-road infrastructure decisions.
-
-## Limitations identified in the project
 
 The report explicitly notes limitations including:
 
@@ -51,7 +49,7 @@ These limitations are important: the ranking is a decision-support result, not a
 
 ## Project output
 
-- [`outputs/heated-pavement-analysis-public-excerpt.pdf`](outputs/heated-pavement-analysis-public-excerpt.pdf) - curated competition-report excerpt containing the core modeling and prioritization evidence.
+- [`outputs/PROJECT_OUTPUTS.md`](outputs/PROJECT_OUTPUTS.md) - source provenance, top-road ranking, and public-safe evidence summary.
 
 ---
 

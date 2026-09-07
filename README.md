@@ -47,9 +47,10 @@ The report explicitly notes limitations including:
 
 These limitations are important: the ranking is a decision-support result, not a substitute for engineering inspection or municipal feasibility review.
 
-## Project output
+## Project outputs
 
-- [`outputs/PROJECT_OUTPUTS.md`](outputs/PROJECT_OUTPUTS.md) - source provenance, top-road ranking, and public-safe evidence summary.
+- [`outputs/heated-pavement-analysis-public-excerpt.pdf`](outputs/heated-pavement-analysis-public-excerpt.pdf) - concise public-safe technical excerpt derived from the competition report.
+- [`outputs/PROJECT_OUTPUTS.md`](outputs/PROJECT_OUTPUTS.md) - source provenance, top-road ranking, and public-release notes.
 
 ---
 

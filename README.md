@@ -1,53 +1,73 @@
-# Risk-Based Prioritization of Heated-Pavement Deployment in Gwangjin-gu
+# Risk-Based Prioritization of Heated Pavement Deployment
 
-> A public-data machine-learning workflow for prioritizing roads where heated-pavement installation could reduce winter road-risk exposure.
+> A spatial machine-learning framework for prioritizing road segments for heated-pavement installation using road, accident, weather, and facility data.
 
-**Project:** 2025 Gwangjin-gu Big Data Analysis Competition  
-**Core method:** Random Forest · probability ranking · road-level contextual review
+**Period:** May. 2025  
+**Domain:** Spatial data analysis · Public safety  
+**Core methods:** Random Forest · PCA · KD-Tree  
+**Output:** Ranked candidate road segments for heated-pavement deployment
 
 ---
 
-## Problem
+## Overview
 
-Heated pavement can reduce winter hazards such as snow / ice-related road risk, but installation resources are limited. The project therefore reframed deployment as a **road-prioritization problem**: use public data to identify road segments with characteristics associated with higher installation priority, then review the highest-ranked candidates in their actual road context.
+Heated pavement can reduce winter road hazards, but installation resources are limited. This project therefore framed deployment as a **risk-based prioritization problem**: integrate heterogeneous public datasets, construct road-level spatial features, estimate relative installation priority, and rank candidate road segments for decision support.
 
-## Analytical workflow
+The workflow combined road, accident, weather, and nearby-facility information and used spatial preprocessing together with machine learning to convert multiple risk signals into a transparent prioritization result.
 
-1. Collect and preprocess Gwangjin-gu public datasets related to road / winter-risk conditions.
-2. Engineer road-level explanatory variables.
-3. Train and evaluate a **Random Forest** classifier.
-4. Use predicted `RF_probability` to rank candidate roads.
-5. Select the top five candidate roads.
-6. Review candidate geometry / surrounding context rather than relying on model probability alone.
+## Data integration
 
-## Model result
+The analysis combined public datasets related to:
+
+- Road characteristics
+- Traffic / accident information
+- Weather and winter-risk conditions
+- Nearby facilities and contextual infrastructure
+- Spatial coordinates and road-segment relationships
+
+## Spatial preprocessing
+
+The project used **PCA** and **KD-Tree**-based processing to organize heterogeneous spatial variables and map contextual information to road-level analysis units.
+
+The goal was to transform multiple datasets with different scales and coordinate structures into a consistent feature space for road-priority modeling.
+
+## Modeling workflow
+
+1. Collect and preprocess road, accident, weather, and facility data.
+2. Construct road-level explanatory variables.
+3. Apply spatial preprocessing and feature construction using **PCA** and **KD-Tree**.
+4. Train a **Random Forest** model for relative installation-priority estimation.
+5. Rank candidate road segments using model probability.
+6. Review the highest-ranked roads in their actual spatial context.
+
+## Main result
 
 ![Random Forest AUC](assets/figure-01-random-forest-auc.svg)
 
-The competition report presents a **Random Forest AUC of 0.888**.
+The competition-stage analysis reported a **Random Forest AUC of 0.888**.
+
+The final workflow converted model output into a ranked list of road segments rather than treating prediction as an automatic installation decision.
 
 ## Candidate prioritization
 
 ![Top five candidate roads](assets/figure-02-top-five-roads.svg)
 
-The final analysis ranked five roads by Random Forest installation probability and then reviewed each candidate using street / road context.
+The analysis identified the highest-priority candidate roads and then reviewed their geometry and surrounding context to support a more interpretable deployment recommendation.
 
 ## Expected impact & limitations
 
 ![Expected impact](assets/figure-03-expected-impact.svg)
 
-The project positioned the model as a transparent screening tool that could support more efficient deployment and later extension to related winter-road infrastructure decisions.
+The project demonstrates how spatial machine learning can support allocation of limited infrastructure resources. The ranking should be interpreted as a **screening / decision-support result**, not as a substitute for engineering inspection or municipal feasibility review.
 
-The report explicitly notes limitations including:
+Important limitations include:
 
-- Different update cycles across public datasets, which can introduce time mismatch
-- Possible coordinate / spatial error after preprocessing
-- Limited availability of detailed road-width / road-environment information
-- Imbalance in road-type representation within the available data
+- Different update cycles across public datasets
+- Potential coordinate / spatial matching error
+- Limited availability of detailed road-width and road-environment information
+- Imbalance in road-type representation
 
-These limitations are important: the ranking is a decision-support result, not a substitute for engineering inspection or municipal feasibility review.
-
-## Project outputs
+## Public outputs
 
 - [`outputs/heated-pavement-analysis-public-excerpt.pdf`](outputs/heated-pavement-analysis-public-excerpt.pdf) - concise public-safe technical excerpt derived from the competition report.
 - [`outputs/PROJECT_OUTPUTS.md`](outputs/PROJECT_OUTPUTS.md) - source provenance, top-road ranking, and public-release notes.
@@ -55,4 +75,4 @@ These limitations are important: the ranking is a decision-support result, not a
 ---
 
 **Junha Won** · Ajou University  
-[Portfolio](https://juna0926.github.io/Portfolio/) · [GitHub](https://github.com/Juna0926)
+[Portfolio detail](https://juna0926.github.io/Portfolio/projects/gwangjin.html) · [Portfolio](https://juna0926.github.io/Portfolio/) · [GitHub](https://github.com/Juna0926)

@@ -19,6 +19,12 @@ The portfolio framing can be summarized as:
 
 **road + accident + weather + facility data → spatial ML risk score → deployment priority**.
 
+## Portfolio-aligned main figure
+
+![Heated pavement deployment prioritization](https://raw.githubusercontent.com/Juna0926/Portfolio/main/assets/media/project-heated-detail.webp)
+
+*Representative figure synchronized with the current Portfolio detail page.*
+
 ## Data integration
 
 The analysis combined public datasets related to:
@@ -46,11 +52,13 @@ The goal was to transform datasets with different scales and coordinate structur
 
 ## Main result
 
-![Random Forest AUC](assets/figure-01-random-forest-auc.svg)
-
 The competition-stage analysis reported a **Random Forest AUC of 0.888**.
 
 The model output was converted into a ranked list of candidate road segments rather than treated as an automatic infrastructure decision.
+
+## Supporting repository figures
+
+![Random Forest AUC](assets/figure-01-random-forest-auc.svg)
 
 ## Candidate prioritization
 
